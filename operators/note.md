@@ -101,6 +101,58 @@ works same as other languages like c++, js.
 ```
 
 
+### 9. Conditional Operators
+
+```
+<?php
+$bool = true;
+$a = 1;
+$b = 4;
+if ($a < $b && !$bool) {
+echo "First condition is true!";||
+} elseif ($a < $b && $bool) {
+echo "Second condition is true!";
+}
+?>
+```
+
+
+### 10. Switch 
+
+```
+$a = 1;
+$b = 4;
+switch ($a) {
+case 1:
+echo "The first case is correct!";
+break;
+case 3:
+echo "The second case is correct!";
+break;
+default:
+echo "None of the conditions were true!";
+}
+```
+
+### 11. Match
+
+```
+$a = "1";
+$b 4;
+$result = match ($a) {
+1, 3, 5 => "Variable a is equal to one!",
+2 => "Variable a is equal to two!",
+default => "None were a match",
+echo $result;
+
+
+// Output will be
+Variable a is equal to one!
+```
+
+
+
+
 
 
  
