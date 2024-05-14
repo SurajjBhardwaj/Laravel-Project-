@@ -46,7 +46,7 @@ echo "name is : ", $_REQUEST["name"];
 
 <!-- FIles Super GLoabal keyword -->
 
-
+njjj
 <?php
 
 echo $_FILES["name"];
@@ -58,6 +58,7 @@ echo "<br>";
 
 <!-- session -->
 <?php
+
 // set yoour sesssiion variables
 
 $_SESSION["name"] = "raj";
