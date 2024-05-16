@@ -17,6 +17,35 @@ if($_SERVER["request_method"] == "POST"){
     
     try {
         require_once("dbh.inc.php");
+        require_once("signup_model.inc.php");
+        require_once("signup_controller.inc.php");
+
+        try {
+            //code...
+
+            if(is_input_empty($username, $email, $password)){
+                header("location: ../index.php?error=emptyinput");
+                exit();
+            }
+
+            if (is_email_invalid($email)) {
+
+                
+
+                
+            }
+            
+
+
+            
+
+            
+
+
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
         
 
 
