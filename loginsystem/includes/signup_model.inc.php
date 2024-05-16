@@ -19,3 +19,20 @@ function get_username(object $PDO, string $username){
     return $result;
     
 }
+
+function get_email(object $PDO, string $email){
+
+
+    $query = "SELECT email FROM users WHERE email =$email";
+    
+    // secure way to prepare the query
+    $stmt = $PDO->prepare($query);
+
+    $stmt->bindParam("", $email);
+    $stmt->execute();
+
+    
+    $result = $stmt->fetc(PDO::FETCH_ASSOC);
+    return $result;
+    
+}

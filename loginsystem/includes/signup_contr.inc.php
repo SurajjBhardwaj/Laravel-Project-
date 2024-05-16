@@ -30,10 +30,27 @@ function is_email_invalid(string $email){
 
 // is username taken
 
-function is_username_taken(string $username){
+function is_username_taken(object $pdo, string $username){
 
-    if(){
+    if(get_username($pdo, $username)){
+        return true;
+    }
 
+    else {
+        return false;
+    }
+
+
+}
+
+
+
+// is email registered
+
+function is_email_registered(object $pdo, string $email){
+
+    if(get_email($pdo, $email)){
+        return true;
     }
 
     else {

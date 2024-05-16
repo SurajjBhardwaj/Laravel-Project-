@@ -23,17 +23,54 @@ if($_SERVER["request_method"] == "POST"){
         try {
             //code...
 
+            $errors = [];
+
+
+
             if(is_input_empty($username, $email, $password)){
-                header("location: ../index.php?error=emptyinput");
+
+                $errors["message"] = "Please fill in all the fields.";
                 exit();
+                
             }
 
             if (is_email_invalid($email)) {
 
+                                $errors["message"] = "invalid email";
+
+                
+            }
+
+            if(is_username_taken($pdo,$username)){
+                                $errors["message"] = "username is already taken";
+
+                
+            }
+
+            if (is_email_registered($pdo, $username)) {
+
+                                $errors["message"] = "eamil alreay in user";
+
+            }
+
+            require_once("config_session.inc.php");
+
+            if($errors){
+
+                $_SESSION["errors_signup"] = $errors;
+                header("location: ../index.php");
                 
 
                 
             }
+
+            else{
+
+
+                // let's save the data now
+            }
+
+            
             
 
 
@@ -43,8 +80,11 @@ if($_SERVER["request_method"] == "POST"){
 
 
             
-        } catch (\Throwable $th) {
+        } catch (PDOException $e) {
             //throw $th;
+
+            die("Query failed: " . $e->getMessage();
+            
         }
         
 
