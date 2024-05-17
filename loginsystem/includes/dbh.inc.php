@@ -1,4 +1,4 @@
-// connection to the database
+<!-- // connection to the database -->
 
 
 <?php
@@ -20,6 +20,3 @@ try {
 
 
     
-
-
-?>

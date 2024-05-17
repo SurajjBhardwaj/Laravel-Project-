@@ -7,12 +7,12 @@ declare(strict_types= 1);
 // check if the input is empty
 function is_input_empty(string $username, string $email, string $password){;
     if(empty($username) || empty($email) || empty($password)){
-        $result = true;
+        return true;
     }
     
     
     else{
-        $result = false;
+        return false;
     }
 }
 
